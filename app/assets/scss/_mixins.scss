@@ -1,0 +1,25 @@
+$breakpoints: (
+  'sm': 576px,  // Mobile landscape
+  'md': 600px,  // Tablets
+  'lg': 992px,  // wider tablets
+  'xl': 1200px, // desktops
+  'xxl': 1400px // Extra large screens
+);
+
+// 2. Create the mixin
+@mixin respond-to($breakpoint) {
+  // Check if the breakpoint exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the pixel value
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    
+    // Output the media query
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    // Log a warning in the compiler if a wrong name is used
+    @warn "Invalid breakpoint: '#{$breakpoint}'. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
