@@ -54,7 +54,7 @@ const sdgs = [
     name: "Quality",
     name2: "Education",
     info: "Delivering practical learning through school outreach, skills training, mentorship, and knowledge-sharing platforms.",
-    image: "/images/sdgs/goal4.jpg",
+    image: "/images/sdgs/goal4.png",
     bgColor: "#CA212F",
   },
   {
@@ -78,7 +78,7 @@ const sdgs = [
     name: "Reduced",
     name2: "Inequalities",
     info: "Promoting the inclusion of marginalized groups, including women and persons with disabilities, through inclusive programming.",
-    image: "/images/sdgs/goal10.jpg",
+    image: "/images/sdgs/goal10.png",
     bgColor: "#E11484",
   },
   {
