@@ -1,6 +1,6 @@
 <template>
   <div class="heroSection">
-    <div class="textSection">
+    <div class="textSection" ref="textSectionRef">
       <div class="intro">
         <div class="badge">
           <p>Over <span>500+</span> youths impacted</p>
@@ -148,9 +148,40 @@ const heroImages = [
 ];
 
 const imageSectionRef = ref(null);
+const textSectionRef = ref(null);
 
 onMounted(() => {
   const images = imageSectionRef.value.querySelectorAll(".image");
+  const badge = textSectionRef.value.querySelector(".badge");
+  const heading = textSectionRef.value.querySelector(".heading");
+  const info = textSectionRef.value.querySelector(".info");
+  const ctas = textSectionRef.value.querySelectorAll(".ctas > *");
+
+  const tl = gsap.timeline();
+
+  tl.fromTo(
+    badge,
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.1 }
+  )
+  .fromTo(
+    heading,
+    { y: 30, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+    "-=0.4"
+  )
+  .fromTo(
+    info,
+    { y: 30, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+    "-=0.6"
+  )
+  .fromTo(
+    ctas,
+    { y: 20, opacity: 0, scale: 0.95 },
+    { y: 0, opacity: 1, scale: 1, duration: 0.6, stagger: 0.15, ease: "power3.out" },
+    "-=0.6"
+  );
 
   gsap.fromTo(
     images,
@@ -169,7 +200,7 @@ onMounted(() => {
         from: "center",
       },
       ease: "power3.out",
-      delay: 0.1,
+      delay: 0.6,
     }
   );
 });
@@ -215,10 +246,10 @@ onMounted(() => {
     .intro {
       .badge {
         margin: 10px auto;
-        padding: 4px 8px;
+        padding: 6px 8px 4px 8px;
         width: max-content;
         font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.1);
         border-radius: 50px;
         span {
           color: $brand-color-1;

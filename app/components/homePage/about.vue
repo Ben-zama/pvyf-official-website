@@ -2,7 +2,7 @@
   <div class="aboutSection">
     <div class="topSection">
       <div class="image">
-        <img src="/images/about-image.jpg" alt="" />
+        <img src="/images/wio.jpg" alt="" />
       </div>
 
       <div class="text">
@@ -39,16 +39,23 @@
 
     <div class="partners">
       <p>Our Partners over the years</p>
-      <div class="pictureGrid">
-        <div v-for="item in partners" :key="item" class="image">
-          <img :src="item" />
-        </div>
+      <div class="marquee-container">
+        <ClientOnly>
+          <Vue3Marquee :duration="30" :pauseOnHover="true" :clone="true">
+            <div v-for="item in partners" :key="item.name" class="image">
+              <img :src="item.image" :alt="item.name" />
+              <div class="tooltip">{{ item.name }}</div>
+            </div>
+          </Vue3Marquee>
+        </ClientOnly>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Vue3Marquee } from 'vue3-marquee'
+
 const points = [
   {
     icon: "bi-graph-up-arrow",
@@ -77,13 +84,13 @@ const points = [
 ];
 
 const partners = [
-  "/images/partners/nrc.webp",
-  "/images/partners/kepa.png",
-  "/images/partners/NYCN.png",
-  "/images/partners/milton.png",
-  "/images/partners/kasu.png",
-  "/images/partners/sbc.png",
-  "/images/partners/chs.png",
+  { name: "Nigerian Red Cross", image: "/images/partners/nrc.webp" },
+  { name: "Kaduna State Environmental Protectiom Authority", image: "/images/partners/kepa.png" },
+  { name: "National Youth Council of Nigeria", image: "/images/partners/NYCN.png" },
+  { name: "Milton College of Arts & Science", image: "/images/partners/milton.png" },
+  { name: "Kaduna State University", image: "/images/partners/kasu.png" },
+  { name: "Seven-Up Bottling Company", image: "/images/partners/sbc.png" },
+  { name: "ChristHelp Studios", image: "/images/partners/chs.png" },
 ];
 </script>
 
@@ -130,7 +137,7 @@ const partners = [
 
       @include respond-to("xl") {
         width: 400px;
-        height: 400px;
+        height: 600px;
       }
     }
 
@@ -159,7 +166,6 @@ const partners = [
         }
         p {
           font-family: $alternate-font;
-          font-size: 18px;
         }
       }
       h2 {
@@ -218,40 +224,76 @@ const partners = [
       text-align: center;
       font-family: $alternate-font;
       font-size: 24px;
+      color: $brand-color-1;
+      font-weight: bold;
     }
-    .pictureGrid {
+    .marquee-container {
       width: 100%;
       margin-top: 25px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-auto-rows: 80px;
-      justify-items: center;
-      row-gap: 25px;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
       .image {
-        grid-column: span 2;
-        width: 100%;
-        height: 100%;
+        position: relative;
+        margin: 0 40px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
         img {
-          width: 100%;
-          height: 100%;
+          height: 80px;
+          width: auto;
           object-fit: contain;
         }
-      }
-      :last-child {
-        grid-column: span 4;
-        padding: 0 7.5%;
+        .tooltip {
+          position: absolute;
+          bottom: 95px;
+          left: 50%;
+          transform: translateX(-50%) translateY(10px);
+          background-color: $brand-color-1;
+          color: $background-color;
+          padding: 6px 12px;
+          border-radius: 4px;
+          font-family: $alternate-font;
+          font-size: 14px;
+          white-space: nowrap;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          pointer-events: none;
+          z-index: 10;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: $brand-color-1 transparent transparent transparent;
+          }
+        }
+
+        &:hover .tooltip {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(-50%) translateY(0);
+        }
       }
 
       @include respond-to("md") {
-        grid-template-columns: repeat(8, 1fr);
-        padding: 0 5%;
-        :nth-child(6) {
-          order: 1;
+        .image {
+          margin: 0 50px;
+          img {
+            height: 100px;
+          }
+          .tooltip {
+            bottom: 115px;
+          }
         }
-      }
-
-      @include respond-to("xl") {
-        padding: 0 10%;
       }
     }
   }

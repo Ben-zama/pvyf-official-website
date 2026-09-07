@@ -28,7 +28,7 @@ defineProps({
 
   .bars {
     width: 100%;
-    height: 2px;
+    height: 1.5px;
     background-color: $text-color;
     border-radius: 4px;
     transition-duration: .5s;

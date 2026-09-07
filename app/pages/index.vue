@@ -10,6 +10,10 @@
 
   <HomePageSdgs />
 
+  <HomePageTestimonials />
+
+  <DonationCta />
+
 </template>
 
 <script setup>

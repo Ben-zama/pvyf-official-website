@@ -41,17 +41,17 @@ const flagship = [
   {
     title: "WakeUp School Outreach",
     info: "The WakeUp School Outreach Program is the Princess Vanessa Yemilo Foundation’s flagship school-based initiative designed to inspire purpose discovery, leadership development, and social responsibility among secondary school students.",
-    img: "/images/wio.jpg",
+    img: "/illustrations/wuso.svg",
   },
   {
     title: "Work It Out Training",
     info: "The Work It Out Training Program is PVYF’s annual youth empowerment initiative that provides secondary school students and community youths with practical skills, leadership training, entrepreneurship education, and sustainability knowledge during the long vacation period.",
-    img: "/images/wio.jpg",
+    img: "/illustrations/wio.svg",
   },
   {
     title: "Work It Out Club Series (WIOCS)",
     info: "The Work It Out Club Series (SDCS) is a three-month weekend vocational and entrepreneurship program designed to equip young people with practical, income-generatingskills that promote self-reliance and sustainable livelihoods.",
-    img: "/images/wio.jpg",
+    img: "/illustrations/wiocs.svg",
   },
 ];
 </script>
@@ -79,7 +79,6 @@ const flagship = [
       }
       p {
         font-family: $alternate-font;
-        font-size: 18px;
       }
     }
     h2 {
@@ -103,7 +102,7 @@ const flagship = [
       padding: 15px;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 50px;
       border-radius: 16px;
       overflow: hidden;
       .text {
@@ -134,27 +133,30 @@ const flagship = [
 
     @include respond-to("md") {
       .card {
-        padding: 15px 25px;
+        padding: 25px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         .text {
-          width: 65%;
+          width: 55%;
           h3 {
             font-size: 24px;
           }
         }
         .images {
-          width: 25%;
+          width: 35%;
         }
       }
     }
 
     @include respond-to("xl") {
       .card {
-        padding: 15px 50px;
+        padding: 100px 50px;
+        .text {
+          width: 50%;
+        }
         .images {
-          width: 20%;
+          width: 30%;
         }
       }
     }

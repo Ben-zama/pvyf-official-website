@@ -61,8 +61,8 @@ const props = defineProps({
   color: $text-color;
   border-radius: 10rem;
   font-family: $alternate-font;
-  font-size: 15px;
-  padding: 8px 16px 8px 8px;
+  font-size: 14px;
+  padding: 6px 12px 6px 6px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -70,8 +70,8 @@ const props = defineProps({
 
   &__icon-wrapper {
     flex-shrink: 0;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     position: relative;
     color: $secondary-color;
     background: $text-color;

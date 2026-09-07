@@ -64,7 +64,6 @@ const impact = [
   margin-top: 50px;
   padding: 25px 15px;
   background: $primary-color;
-  color: $background-color;
 
   @include respond-to("md") {
     padding: 50px;
@@ -80,11 +79,10 @@ const impact = [
       align-items: baseline;
       gap: 10px;
       i {
-        color: color-mix(in srgb, $brand-color-1 75%, #FF00FF);
+        color: $brand-color-1;
       }
       p {
         font-family: $alternate-font;
-        font-size: 18px;
       }
     }
     h2 {

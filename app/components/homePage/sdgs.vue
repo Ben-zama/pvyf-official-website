@@ -125,7 +125,6 @@ const sdgs = [
       }
       p {
         font-family: $alternate-font;
-        font-size: 18px;
       }
     }
     h2 {
@@ -161,12 +160,35 @@ const sdgs = [
     }
 
     .sdg-card {
+      position: relative;
       padding: 24px;
       border-radius: 12px;
       color: #ffffff;
       display: flex;
       flex-direction: column;
       gap: 16px;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 30%,
+          rgba(255, 255, 255, 0.4) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: translateX(-100%);
+        transition: transform 0.8s ease;
+        pointer-events: none;
+      }
+      &:hover::before {
+        transform: translateX(100%);
+      }
 
       .card-header {
         display: flex;

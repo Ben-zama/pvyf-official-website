@@ -117,7 +117,7 @@ const getScale = () => {
     ? ripplesRef.value.offsetWidth
     : window.innerWidth;
   const diag = Math.sqrt(containerWidth ** 2 + window.innerHeight ** 2);
-  return diag / 20; // 40px base size -> 20px radius
+  return diag / 15;
 };
 
 onMounted(() => {
@@ -149,9 +149,11 @@ onMounted(() => {
 const toggleMenu = () => {
   if (isMenuOpen.value) {
     isMenuOpen.value = false;
+    document.body.style.overflow = "";
     tl.reverse();
   } else {
     isMenuOpen.value = true;
+    document.body.style.overflow = "hidden";
 
     const rect = hamburgerRef.value.getBoundingClientRect();
     const ripplesRect = ripplesRef.value.getBoundingClientRect();
@@ -172,6 +174,7 @@ const toggleMenu = () => {
 const closeMenu = () => {
   if (isMenuOpen.value) {
     isMenuOpen.value = false;
+    document.body.style.overflow = "";
     tl.reverse();
   }
 };
@@ -269,15 +272,15 @@ const closeMenu = () => {
       padding: 0 25px;
       .logo {
         width: auto;
-        padding: 15px 0;
+        padding: 20px 0;
       }
       .side {
         .button {
           display: flex;
         }
         .hamburger {
-          width: 42px;
-          height: 42px;
+          width: 36px;
+          height: 36px;
         }
       }
     }
@@ -334,7 +337,7 @@ const closeMenu = () => {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     padding: 24px;
     display: flex;
     flex-direction: column;
@@ -356,6 +359,7 @@ const closeMenu = () => {
   }
 
   footer {
+    margin-top: 50px;
     position: relative;
     width: 100%;
     display: flex;
@@ -364,7 +368,9 @@ const closeMenu = () => {
     gap: 25px;
     padding: 25px 15px;
     background: $background-color;
+
     @include respond-to("md") {
+      margin-top: 75px;
       gap: 50px;
       padding: 25px;
     }
