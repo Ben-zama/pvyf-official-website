@@ -53,7 +53,7 @@ const impact = [
   {
     icon: "bi-person-vcard-fill",
     stat: "60",
-    title: "Community Volunteers",
+    title: "Reached",
     info: "Mobilized for hands-on climate action during the Mahuta Community Cleanup.",
   },
 ];
@@ -152,6 +152,9 @@ const impact = [
             font-size: 32px;
             font-weight: bold;
           }
+        }
+        h4 {
+          font-size: 16px;
         }
         p {
           font-size: 14px;

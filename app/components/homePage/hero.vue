@@ -3,7 +3,7 @@
     <div class="textSection" ref="textSectionRef">
       <div class="intro">
         <div class="badge">
-          <p>Over <span>500+</span> youths impacted</p>
+          <p>Over <span>600+</span> youths impacted</p>
         </div>
         <div class="heading heading-1">
           <h2>
@@ -292,6 +292,7 @@ onMounted(() => {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
+    z-index: -1;
 
     .image {
       position: relative;

@@ -16,18 +16,7 @@
     </div>
 
     <div class="container">
-      <div v-for="item in flagship" :key="item" class="card">
-        <div class="text">
-          <i :class="item.icon"></i>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.info }}</p>
-          <p class="info2">{{ item.info2 }}</p>
-          <ctaButton name="More Info" />
-        </div>
-        <div class="images">
-          <img :src="item.img" alt="" />
-        </div>
-      </div>
+      <projectCard v-for="(item, index) in flagship" :key="index" :item="item" />
     </div>
 
     <div class="see-all">
@@ -44,13 +33,13 @@ const flagship = [
     img: "/illustrations/wuso.svg",
   },
   {
-    title: "Work It Out Training",
-    info: "The Work It Out Training Program is PVYF’s annual youth empowerment initiative that provides secondary school students and community youths with practical skills, leadership training, entrepreneurship education, and sustainability knowledge during the long vacation period.",
+    title: "Work It Out Training Program and Exhibition Day",
+    info: "The Work It Out Training Program and Exhibition Day is PVYF’s annual youth empowerment initiative that provides secondary school students and community youths with practical skills, leadership training, entrepreneurship education, and sustainability knowledge during the long vacation period.",
     img: "/illustrations/wio.svg",
   },
   {
     title: "Work It Out Club Series (WIOCS)",
-    info: "The Work It Out Club Series (SDCS) is a three-month weekend vocational and entrepreneurship program designed to equip young people with practical, income-generatingskills that promote self-reliance and sustainable livelihoods.",
+    info: "The Work It Out Club Series (SDCS) is a three-month weekend vocational and entrepreneurship program designed to equip young people with practical, income-generating skills that promote self-reliance and sustainable livelihoods.",
     img: "/illustrations/wiocs.svg",
   },
 ];
@@ -98,28 +87,6 @@ const flagship = [
     display: flex;
     flex-direction: column;
     gap: 25px;
-    .card {
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 50px;
-      border-radius: 16px;
-      overflow: hidden;
-      .text {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 15px;
-      }
-      .images {
-        width: 75%;
-        img {
-          width: 100%;
-          height: 100%;
-          border-radius: 8px;
-        }
-      }
-    }
     > :nth-child(1) {
       background: $brand-color-1;
       color: $background-color;
@@ -129,36 +96,6 @@ const flagship = [
     }
     > :nth-child(3) {
       background: $brand-color-3;
-    }
-
-    @include respond-to("md") {
-      .card {
-        padding: 25px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        .text {
-          width: 55%;
-          h3 {
-            font-size: 24px;
-          }
-        }
-        .images {
-          width: 35%;
-        }
-      }
-    }
-
-    @include respond-to("xl") {
-      .card {
-        padding: 100px 50px;
-        .text {
-          width: 50%;
-        }
-        .images {
-          width: 30%;
-        }
-      }
     }
   }
 

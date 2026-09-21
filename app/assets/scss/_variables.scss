@@ -7,7 +7,15 @@ $brand-color-1: #69418A;
 $brand-color-2: #D32C24;
 $brand-color-3: #E9A63B;
 
+@font-face {
+    font-family: 'Georgia';
+    src: url('../fonts/georgia.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 $header-font: "Anton", sans-serif;
-$body-font: "Overpass", sans-serif;
+$body-font: "Georgia", sans-serif;
 $alternate-font: "Nova Square", sans-serif;
 $cursive-font: "Chewy", cursive;
