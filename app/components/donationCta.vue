@@ -88,7 +88,7 @@ const copyToClipboard = async () => {
   padding: 25px;
   background: $brand-color-1;
   border-radius: 16px;
-  color: $background-color;
+  color: white;
 
   @include respond-to("md") {
     margin: 25px 50px;
@@ -199,7 +199,7 @@ const copyToClipboard = async () => {
 
           .tooltip {
             visibility: hidden;
-            background-color: $background-color;
+            background-color: white;
             color: $brand-color-1;
             text-align: center;
             border-radius: 6px;
@@ -259,7 +259,7 @@ const copyToClipboard = async () => {
         font-size: 20px;
         margin-bottom: 16px;
         padding-bottom: 8px;
-        border-bottom: 1px solid rgba($background-color, 0.2);
+        border-bottom: 1px solid rgba(white, 0.2);
         font-weight: 600;
       }
 
@@ -281,7 +281,7 @@ const copyToClipboard = async () => {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 4px;
-            color: $background-color;
+            color: white;
             opacity: 1;
           }
         }
@@ -299,16 +299,15 @@ const copyToClipboard = async () => {
 
           i {
             font-size: 20px;
-            color: $background-color;
+            color: white;
           }
 
           a {
-            color: $background-color;
+            color: white;
             text-decoration: none;
             transition: opacity 0.2s ease;
 
             &:hover {
-              opacity: 0.7;
               text-decoration: underline;
             }
           }

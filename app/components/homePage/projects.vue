@@ -16,11 +16,15 @@
     </div>
 
     <div class="container">
-      <projectCard v-for="(item, index) in flagship" :key="index" :item="item" />
+      <projectCard
+        v-for="(item, index) in flagship"
+        :key="index"
+        :item="item"
+      />
     </div>
 
     <div class="see-all">
-      <ctaButton name="See All Projects" link="all" />
+      <ctaButton name="See All Projects" link="projects" />
     </div>
   </div>
 </template>
@@ -113,10 +117,10 @@ const flagship = [
 
       &:hover {
         background: $brand-color-1;
-        color: $secondary-color;
+        color: $primary-color;
 
         .button__icon-wrapper {
-          background: $secondary-color;
+          background: $primary-color;
           color: $brand-color-1;
         }
       }

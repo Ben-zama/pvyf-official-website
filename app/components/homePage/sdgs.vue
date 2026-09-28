@@ -100,147 +100,150 @@ const sdgs = [
 ];
 </script>
 
-<style lang="scss" scoped>
-.sdgSection {
-  margin-top: 50px;
-  padding: 15px;
+<style lang="scss">
+.homePage {
 
-  @include respond-to("md") {
-    padding: 15px 50px;
-  }
-
-  @include respond-to("xl") {
-    padding: 25px 100px;
-  }
-
-  .heading {
-    margin-bottom: 40px;
-
-    .intro {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      i {
-        color: $brand-color-1;
-      }
-      p {
-        font-family: $alternate-font;
-      }
-    }
-    h2 {
-      margin: 10px 0;
-    }
+  .sdgSection {
+    margin-top: 50px;
+    padding: 15px;
 
     @include respond-to("md") {
-      max-width: 700px;
-      h2 {
-        font-size: 30px;
-      }
-    }
-  }
-
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-
-    @include respond-to("md") {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include respond-to("lg") {
-      grid-template-columns: repeat(3, 1fr);
+      padding: 15px 50px;
     }
 
     @include respond-to("xl") {
-      grid-template-columns: repeat(4, 1fr);
-      > :last-child {
-        grid-column: span 2;
+      padding: 25px 100px;
+    }
+
+    .heading {
+      margin-bottom: 40px;
+
+      .intro {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        i {
+          color: $brand-color-1;
+        }
+        p {
+          font-family: $alternate-font;
+        }
+      }
+      h2 {
+        margin: 10px 0;
+      }
+
+      @include respond-to("md") {
+        max-width: 700px;
+        h2 {
+          font-size: 30px;
+        }
       }
     }
 
-    .sdg-card {
-      position: relative;
-      padding: 24px;
-      border-radius: 12px;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      overflow: hidden;
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
 
-      &::before {
-        content: "";
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-          120deg,
-          rgba(255, 255, 255, 0) 30%,
-          rgba(255, 255, 255, 0.4) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        transform: translateX(-100%);
-        transition: transform 0.8s ease;
-        pointer-events: none;
-      }
-      &:hover::before {
-        transform: translateX(100%);
+      @include respond-to("md") {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .card-header {
+      @include respond-to("lg") {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include respond-to("xl") {
+        grid-template-columns: repeat(4, 1fr);
+        > :last-child {
+          grid-column: span 2;
+        }
+      }
+
+      .sdg-card {
+        position: relative;
+        padding: 24px;
+        border-radius: 12px;
+        color: #ffffff;
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        border-bottom: 1px solid #ffffff33;
-        padding-bottom: 16px;
+        gap: 16px;
+        overflow: hidden;
 
-        .span {
+        &::before {
+          content: "";
+          position: absolute;
+          top: -100%;
+          left: -100%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          transform: translateX(-100%);
+          transition: transform 0.8s ease;
+          pointer-events: none;
+        }
+        &:hover::before {
+          transform: translateX(100%);
+        }
+
+        .card-header {
           display: flex;
-          align-items: center;
+          flex-direction: column;
           gap: 15px;
-          font-family: $alternate-font;
-          font-size: 18px;
-          font-weight: bold;
-          span {
-            font-size: 42px;
-          }
-          h3 {
+          border-bottom: 1px solid #ffffff33;
+          padding-bottom: 16px;
+
+          .span {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             font-family: $alternate-font;
+            font-size: 18px;
+            font-weight: bold;
+            span {
+              font-size: 42px;
+            }
+            h3 {
+              font-family: $alternate-font;
+            }
+          }
+
+          .icon {
+            width: 100px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              object-position: left;
+            }
+          }
+
+          h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.3;
           }
         }
 
-        .icon {
-          width: 100px;
-          height: 60px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: left;
+        .card-body {
+          p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+            opacity: 0.95;
           }
-        }
-
-        h3 {
-          font-size: 18px;
-          font-weight: 600;
-          margin: 0;
-          line-height: 1.3;
-        }
-      }
-
-      .card-body {
-        p {
-          font-size: 15px;
-          line-height: 1.6;
-          margin: 0;
-          opacity: 0.95;
         }
       }
     }

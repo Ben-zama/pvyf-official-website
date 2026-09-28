@@ -35,6 +35,11 @@ defineProps({
     flex-direction: column;
     align-items: start;
     gap: 15px;
+    font-size: 14px;
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+    }
     :deep(.button) {
       &:hover {
         background: $text-color;

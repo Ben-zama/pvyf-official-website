@@ -60,104 +60,106 @@ const impact = [
 </script>
 
 <style lang="scss">
-.impactSection {
-  margin-top: 50px;
-  padding: 25px 15px;
-  background: $primary-color;
-
-  @include respond-to("md") {
-    padding: 50px;
-  }
-
-  @include respond-to("xl") {
-    padding: 50px 100px;
-  }
-
-  .heading {
-    .intro {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      i {
-        color: $brand-color-1;
-      }
-      p {
-        font-family: $alternate-font;
-      }
-    }
-    h2 {
-      margin: 10px 0;
-    }
+.homePage {
+  .impactSection {
+    margin-top: 50px;
+    padding: 25px 15px;
+    background: $primary-color;
 
     @include respond-to("md") {
-      max-width: 700px;
-      h2 {
-        font-size: 30px;
-      }
-    }
-  }
-
-  .container {
-    margin-top: 25px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 15px;
-
-    @include respond-to("md") {
-      grid-template-columns: repeat(2, 1fr);
+      padding: 50px;
     }
 
     @include respond-to("xl") {
-      grid-template-columns: repeat(4, 1fr);
+      padding: 50px 100px;
     }
 
-    .card {
-      position: relative;
-      padding: 15px;
-      background: $background-color;
-      color: $text-color;
-      border-radius: 16px;
-      .icon {
-        position: absolute;
-        width: 48px;
-        height: 48px;
-        top: 0;
-        right: 0;
+    .heading {
+      .intro {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        background: $brand-color-1;
-        border-radius: 50%;
-        outline: 6px solid $primary-color;
+        align-items: baseline;
+        gap: 10px;
         i {
-          height: 24px;
-          color: $background-color;
-          font-size: 24px;
-        }
-      }
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        .stat {
-          display: flex;
-          align-items: baseline;
-          gap: 5px;
-          h3 {
-            font-size: 32px;
-          }
-          span {
-            color: $brand-color-1;
-            font-size: 32px;
-            font-weight: bold;
-          }
-        }
-        h4 {
-          font-size: 16px;
+          color: $brand-color-1;
         }
         p {
-          font-size: 14px;
+          font-family: $alternate-font;
+        }
+      }
+      h2 {
+        margin: 10px 0;
+      }
+
+      @include respond-to("md") {
+        max-width: 700px;
+        h2 {
+          font-size: 30px;
+        }
+      }
+    }
+
+    .container {
+      margin-top: 25px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 15px;
+
+      @include respond-to("md") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include respond-to("xl") {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .card {
+        position: relative;
+        padding: 15px;
+        background: $background-color;
+        color: $text-color;
+        border-radius: 16px;
+        .icon {
+          position: absolute;
+          width: 48px;
+          height: 48px;
+          top: 0;
+          right: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: $brand-color-1;
+          border-radius: 50%;
+          outline: 6px solid $primary-color;
+          i {
+            height: 24px;
+            color: $background-color;
+            font-size: 24px;
+          }
+        }
+
+        .text {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          .stat {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+            h3 {
+              font-size: 32px;
+            }
+            span {
+              color: $brand-color-1;
+              font-size: 32px;
+              font-weight: bold;
+            }
+          }
+          h4 {
+            font-size: 16px;
+          }
+          p {
+            font-size: 14px;
+          }
         }
       }
     }

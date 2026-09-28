@@ -57,7 +57,7 @@ const props = defineProps({
   cursor: pointer;
   align-items: center;
   gap: 10px;
-  background: $secondary-color;
+  background: $primary-color;
   color: $text-color;
   border-radius: 10rem;
   font-family: $alternate-font;
@@ -73,7 +73,7 @@ const props = defineProps({
     width: 24px;
     height: 24px;
     position: relative;
-    color: $secondary-color;
+    color: $primary-color;
     background: $text-color;
     border-radius: 50%;
     display: grid;
@@ -90,10 +90,10 @@ const props = defineProps({
 
   &:hover {
     background: $brand-color-1;
-    color: $secondary-color;
+    color: $primary-color;
 
     .button__icon-wrapper {
-      background: $secondary-color;
+      background: $primary-color;
       color: $brand-color-1;
     }
 

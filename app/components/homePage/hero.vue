@@ -24,8 +24,8 @@
       </div>
 
       <div class="ctas">
-        <CtaButton name="Our Impact" />
-        <CtaButton name="Join Us" />
+        <CtaButton name="Our Impact" link="/about" />
+        <CtaButton name="Join Us" link="/volunteer" />
       </div>
     </div>
 
@@ -164,24 +164,31 @@ onMounted(() => {
     { y: 20, opacity: 0 },
     { y: 0, opacity: 1, duration: 0.6, ease: "power3.out", delay: 0.1 }
   )
-  .fromTo(
-    heading,
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
-    "-=0.4"
-  )
-  .fromTo(
-    info,
-    { y: 30, opacity: 0 },
-    { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
-    "-=0.6"
-  )
-  .fromTo(
-    ctas,
-    { y: 20, opacity: 0, scale: 0.95 },
-    { y: 0, opacity: 1, scale: 1, duration: 0.6, stagger: 0.15, ease: "power3.out" },
-    "-=0.6"
-  );
+    .fromTo(
+      heading,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+      "-=0.4"
+    )
+    .fromTo(
+      info,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+      "-=0.6"
+    )
+    .fromTo(
+      ctas,
+      { y: 20, opacity: 0, scale: 0.95 },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power3.out",
+      },
+      "-=0.6"
+    );
 
   gsap.fromTo(
     images,
@@ -207,161 +214,163 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-.heroSection {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  overflow: hidden;
-  height: max-content;
-
-  .textSection {
-    width: 100%;
-    margin-top: 25px;
+.homePage {
+  .heroSection {
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 25px;
-    text-align: center;
+    overflow: hidden;
+    height: max-content;
 
-    @include respond-to("md") {
+    .textSection {
+      width: 100%;
       margin-top: 25px;
-      .intro {
-        max-width: 75%;
-      }
-      .info {
-        max-width: 75%;
-      }
-    }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      text-align: center;
 
-    @include respond-to("xl") {
-      .intro {
-        max-width: 60%;
-      }
-      .info {
-        max-width: 60%;
-      }
-    }
-
-    .intro {
-      .badge {
-        margin: 10px auto;
-        padding: 6px 8px 4px 8px;
-        width: max-content;
-        font-size: 12px;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 50px;
-        span {
-          color: $brand-color-1;
-          font-weight: bold;
+      @include respond-to("md") {
+        margin-top: 25px;
+        .intro {
+          max-width: 75%;
+        }
+        .info {
+          max-width: 75%;
         }
       }
 
-      .heading {
-        h2 {
-          font-size: 30px;
+      @include respond-to("xl") {
+        .intro {
+          max-width: 60%;
+        }
+        .info {
+          max-width: 60%;
+        }
+      }
+
+      .intro {
+        .badge {
+          margin: 10px auto;
+          padding: 6px 8px 4px 8px;
+          width: max-content;
+          font-size: 12px;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 50px;
+          span {
+            color: $brand-color-1;
+            font-weight: bold;
+          }
+        }
+
+        .heading {
+          h2 {
+            font-size: 30px;
+          }
+          @include respond-to("md") {
+            h2 {
+              font-size: 42px;
+            }
+          }
+        }
+      }
+      .info {
+        p {
+          font-size: 14px;
         }
         @include respond-to("md") {
-          h2 {
-            font-size: 42px;
+          p {
+            font-size: 16px;
           }
         }
       }
-    }
-    .info {
-      p {
-        font-size: 14px;
-      }
-      @include respond-to("md") {
-        p {
-          font-size: 16px;
-        }
+      .ctas {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
       }
     }
-    .ctas {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
-  }
 
-  .imageSection {
-    position: relative;
-    left: -25%;
-    width: 150%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
-    z-index: -1;
-
-    .image {
+    .imageSection {
       position: relative;
-      height: 150px;
-      width: 100%;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-top: var(--m-top);
+      left: -25%;
+      width: 150%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      z-index: -1;
 
-      &.m-hide {
-        display: none;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
-      }
-      .overlay {
-        display: none;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 75px;
-        background: linear-gradient(transparent, $background-color 95%);
-
-        &.m-overlay {
-          display: block;
-        }
-      }
-    }
-
-    @include respond-to("md") {
-      margin-top: -25px;
-      width: 125%;
-      left: -12.5%;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
       .image {
-        height: 200px;
-        border-radius: 16px;
-        margin-top: var(--d-top);
+        position: relative;
+        height: 150px;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-top: var(--m-top);
 
         &.m-hide {
-          display: block; /* Show all on md */
+          display: none;
         }
 
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+        }
         .overlay {
-          display: none; /* Reset */
+          display: none;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 75px;
+          background: linear-gradient(transparent, $background-color 95%);
+
           &.m-overlay {
-            display: none;
-          }
-          &.d-overlay {
             display: block;
           }
         }
       }
-    }
 
-    @include respond-to("xl") {
-      margin-top: -50px;
-      padding: 0 75px;
-      width: 100%;
-      left: 0%;
-      gap: 15px;
-      .image {
-        height: 250px;
+      @include respond-to("md") {
+        margin-top: -25px;
+        width: 125%;
+        left: -12.5%;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        .image {
+          height: 200px;
+          border-radius: 16px;
+          margin-top: var(--d-top);
+
+          &.m-hide {
+            display: block; /* Show all on md */
+          }
+
+          .overlay {
+            display: none; /* Reset */
+            &.m-overlay {
+              display: none;
+            }
+            &.d-overlay {
+              display: block;
+            }
+          }
+        }
+      }
+
+      @include respond-to("xl") {
+        margin-top: -50px;
+        padding: 0 75px;
+        width: 100%;
+        left: 0%;
+        gap: 15px;
+        .image {
+          height: 250px;
+        }
       }
     }
   }

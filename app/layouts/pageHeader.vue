@@ -1,5 +1,5 @@
 <template>
-  <div id="mainLayout">
+  <div id="pageHeaderLayout">
     <header>
       <NuxtLink class="logo" to="/">
         <img src="/images/full.png" alt="" />
@@ -19,6 +19,12 @@
         </div>
       </div>
     </header>
+
+    <section class="page-header-banner">
+      <div class="banner-content">
+        <h1>{{ pageTitle }}</h1>
+      </div>
+    </section>
 
     <div class="ripples" ref="ripplesRef">
       <div class="ripple ripple-1" ref="ripple1"></div>
@@ -97,8 +103,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import gsap from "gsap";
+
+const route = useRoute();
+const pageTitle = computed(() => {
+  if (route.meta.title) return route.meta.title;
+  const name = route.name ? String(route.name) : "";
+  return name.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+});
 
 const isMenuOpen = ref(false);
 const hamburgerRef = ref(null);
@@ -181,7 +194,7 @@ const closeMenu = () => {
 </script>
 
 <style lang="scss">
-#mainLayout {
+#pageHeaderLayout {
   header {
     padding: 0 20px;
     display: flex;
@@ -189,6 +202,7 @@ const closeMenu = () => {
     justify-content: space-between;
     width: 100%;
     height: 90px;
+    background: linear-gradient(135deg, rgba($brand-color-1, 0.08) 0%, rgba($brand-color-2, 0.05) 100%);
 
     .logo {
       width: 60%;
@@ -289,6 +303,78 @@ const closeMenu = () => {
       padding: 0 50px;
       .navigation {
         display: flex;
+      }
+    }
+  }
+
+  /* Page Header Banner */
+  .page-header-banner {
+    width: 100%;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba($brand-color-1, 0.08) 0%, rgba($brand-color-2, 0.05) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba($brand-color-1, 0.2), transparent);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba($brand-color-1, 0.2), transparent);
+    }
+
+    h1 {
+      padding-top: 0px;
+      font-size: 36px;
+      font-family: $alternate-font;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+
+      &::before {
+        content: '';
+        /* background-image: url('~/assets/images/stroke.png'); */
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: -1;
+      }
+    }
+
+    @include respond-to("md") {
+      padding: 80px 25px;
+      h1 {
+        font-size: 48px;
+      }
+    }
+
+    @include respond-to("xl") {
+      padding: 100px 50px;
+      h1 {
+        font-size: 56px;
       }
     }
   }

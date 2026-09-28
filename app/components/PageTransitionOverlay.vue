@@ -75,7 +75,7 @@ defineExpose({
     &.ripple-1 { background: $brand-color-1; }
     &.ripple-2 { background: $brand-color-2; }
     &.ripple-3 { background: $brand-color-3; }
-    &.ripple-4 { background: $secondary-color; }
+    &.ripple-4 { background: $primary-color; }
   }
 }
 </style>

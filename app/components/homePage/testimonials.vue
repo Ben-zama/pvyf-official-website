@@ -140,198 +140,204 @@ const testimonials = [
 </script>
 
 <style lang="scss">
-.testimonialSection {
-  margin: 50px 0;
-  padding: 25px 15px;
-  background: $primary-color;
-
-  @include respond-to("md") {
-    padding: 50px 15px;
-  }
-
-  @include respond-to("xl") {
-    padding: 100px 15px;
-  }
-
-  .heading {
-    margin-bottom: 40px;
+.homePage {
+  .testimonialSection {
+    margin: 50px 0;
+    padding: 25px 15px;
+    background: $primary-color;
 
     @include respond-to("md") {
-      padding: 0 35px;
-    }
-    @include respond-to("xl") {
-      padding: 0 85px;
-    }
-
-    .intro {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      i {
-        color: $brand-color-1;
-      }
-      p {
-        font-family: $alternate-font;
-      }
-    }
-
-    h2 {
-      margin: 10px 0;
-      font-size: 26px;
-    }
-
-    @include respond-to("md") {
-      max-width: 600px;
-      h2 {
-        font-size: 34px;
-      }
+      padding: 50px 15px;
     }
 
     @include respond-to("xl") {
-      max-width: 800px;
-    }
-  }
-
-  .slider-container {
-    width: 100%;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      background: linear-gradient(
-        to right,
-        $primary-color 0%,
-        transparent 100%
-      );
-      z-index: 2;
-      pointer-events: none;
+      padding: 100px 15px;
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      width: 0;
-      background: linear-gradient(to left, $primary-color 0%, transparent 100%);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    @include respond-to("md") {
-      &::before,
-      &::after {
-        width: 15%;
-      }
-    }
-
-    .testimonial-swiper {
-      padding-bottom: 50px;
-
-      @include respond-to("xl") {
-        padding-bottom: 60px;
-      }
-    }
-
-    .swiper-slide {
-      height: auto;
+    .heading {
+      margin-bottom: 40px;
 
       @include respond-to("md") {
-        &-active {
-          .testimonial-card {
-            background: rgba($brand-color-1, 0.9);
-            .quote-icon {
-              color: $brand-color-3;
-            }
-            .quote-text {
-              color: $background-color;
-            }
-            .author-info {
-              border-top-color: rgba($brand-color-3, 0.5);
-              h4 {
+        padding: 0 35px;
+      }
+      @include respond-to("xl") {
+        padding: 0 85px;
+      }
+
+      .intro {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        i {
+          color: $brand-color-1;
+        }
+        p {
+          font-family: $alternate-font;
+        }
+      }
+
+      h2 {
+        margin: 10px 0;
+        font-size: 26px;
+      }
+
+      @include respond-to("md") {
+        max-width: 600px;
+        h2 {
+          font-size: 34px;
+        }
+      }
+
+      @include respond-to("xl") {
+        max-width: 800px;
+      }
+    }
+
+    .slider-container {
+      width: 100%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        background: linear-gradient(
+          to right,
+          $primary-color 0%,
+          transparent 100%
+        );
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        background: linear-gradient(
+          to left,
+          $primary-color 0%,
+          transparent 100%
+        );
+        z-index: 2;
+        pointer-events: none;
+      }
+
+      @include respond-to("md") {
+        &::before,
+        &::after {
+          width: 15%;
+        }
+      }
+
+      .testimonial-swiper {
+        padding-bottom: 50px;
+
+        @include respond-to("xl") {
+          padding-bottom: 60px;
+        }
+      }
+
+      .swiper-slide {
+        height: auto;
+
+        @include respond-to("md") {
+          &-active {
+            .testimonial-card {
+              background: rgba($brand-color-1, 0.9);
+              .quote-icon {
+                color: $brand-color-3;
+              }
+              .quote-text {
                 color: $background-color;
               }
-              .role,
-              .organization {
-                color: rgba($background-color, 0.7);
-              }
-              .program-tag {
-                color: $brand-color-3;
+              .author-info {
+                border-top-color: rgba($brand-color-3, 0.5);
+                h4 {
+                  color: $background-color;
+                }
+                .role,
+                .organization {
+                  color: rgba($background-color, 0.7);
+                }
+                .program-tag {
+                  color: $brand-color-3;
+                }
               }
             }
           }
         }
       }
-    }
 
-    .testimonial-card {
-      background: $background-color;
-      border-radius: 12px;
-      padding: 24px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      .testimonial-card {
+        background: $background-color;
+        border-radius: 12px;
+        padding: 24px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 
-      .quote-icon {
-        font-size: 24px;
-        color: $brand-color-1;
-        margin-bottom: 15px;
-        opacity: 0.8;
-      }
-
-      .quote-text {
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        flex-grow: 1;
-        font-style: italic;
-      }
-
-      .author-info {
-        border-top: 1px solid rgba($brand-color-1, 0.3);
-        padding-top: 20px;
-
-        h4 {
-          margin: 0 0 5px 0;
-          font-size: 16px;
-        }
-
-        .role,
-        .organization {
-          margin: 0;
-          font-size: 12px;
-          color: darken($background-color, 40%);
-          line-height: 1.4;
-        }
-
-        .program-tag {
-          display: inline-block;
-          margin-top: 8px;
-          font-family: $alternate-font;
+        .quote-icon {
+          font-size: 24px;
           color: $brand-color-1;
-          font-size: 10px;
+          margin-bottom: 15px;
+          opacity: 0.8;
+        }
+
+        .quote-text {
+          font-size: 14px;
+          line-height: 1.6;
+          margin-bottom: 30px;
+          flex-grow: 1;
+          font-style: italic;
+        }
+
+        .author-info {
+          border-top: 1px solid rgba($brand-color-1, 0.3);
+          padding-top: 20px;
+
+          h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+          }
+
+          .role,
+          .organization {
+            margin: 0;
+            font-size: 12px;
+            color: darken($background-color, 40%);
+            line-height: 1.4;
+          }
+
+          .program-tag {
+            display: inline-block;
+            margin-top: 8px;
+            font-family: $alternate-font;
+            color: $brand-color-1;
+            font-size: 10px;
+          }
         }
       }
-    }
 
-    .swiper-pagination-bullet {
-      background-color: darken($background-color, 20%);
-      opacity: 1;
-      width: 10px;
-      height: 10px;
-      transition: all 0.3s ease;
+      .swiper-pagination-bullet {
+        background-color: darken($background-color, 15%);
+        opacity: 1;
+        width: 10px;
+        height: 10px;
+        transition: all 0.3s ease;
 
-      &-active {
-        background-color: $brand-color-1;
-        width: 25px;
-        border-radius: 5px;
+        &-active {
+          background-color: $brand-color-1;
+          width: 25px;
+          border-radius: 5px;
+        }
       }
     }
   }

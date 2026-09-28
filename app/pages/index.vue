@@ -1,19 +1,19 @@
 <template>
+  <div class="homePage">
+    <HomePageHero />
 
-  <HomePageHero />
+    <HomePageAbout />
 
-  <HomePageAbout />
+    <HomePageProjects />
 
-  <HomePageProjects />
+    <HomePageImpact />
 
-  <HomePageImpact />
+    <HomePageSdgs />
 
-  <HomePageSdgs />
+    <HomePageTestimonials />
 
-  <HomePageTestimonials />
-
-  <DonationCta />
-
+    <DonationCta />
+  </div>
 </template>
 
 <script setup>
