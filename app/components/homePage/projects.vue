@@ -43,7 +43,7 @@ const flagship = [
   },
   {
     title: "Work It Out Club Series (WIOCS)",
-    info: "The Work It Out Club Series (SDCS) is a three-month weekend vocational and entrepreneurship program designed to equip young people with practical, income-generating skills that promote self-reliance and sustainable livelihoods.",
+    info: "The Work It Out Club Series (WIOCS) is a weekend vocational and entrepreneurship program designed to equip young people with practical, income-generating skills that promote self-reliance and sustainable livelihoods.",
     img: "/illustrations/wiocs.svg",
   },
 ];
@@ -81,7 +81,7 @@ const flagship = [
     @include respond-to("md") {
       max-width: 700px;
       h2 {
-        font-size: 30px;
+        font-size: 32px;
       }
     }
   }
@@ -91,6 +91,7 @@ const flagship = [
     display: flex;
     flex-direction: column;
     gap: 25px;
+    color: white;
     > :nth-child(1) {
       background: $brand-color-1;
       color: $background-color;

@@ -67,10 +67,11 @@ defineEmits(["close-menu"]);
   </div>
 
   <div class="socials">
+    <a target="_blank" href="https://web.facebook.com/profile.php?id=61587310866451"><i class="bi-facebook"></i></a>
     <a target="_blank" href="https://www.instagram.com/pvyfoundation/"><i class="bi-instagram"></i></a>
     <a target="_blank" href="https://x.com/pvyfoundation?s=11"><i class="bi-twitter-x"></i></a>
+    <a target="_blank" href=""><i class="bi-tiktok"></i></a>
     <a target="_blank" href="https://www.linkedin.com/m/company/pvyfoundation"><i class="bi-linkedin"></i></a>
-    <a target="_blank" href="https://web.facebook.com/profile.php?id=61587310866451"><i class="bi-facebook"></i></a>
   </div>
 </template>
 

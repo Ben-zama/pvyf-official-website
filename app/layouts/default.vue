@@ -52,17 +52,20 @@
           </div>
 
           <div class="socials">
+            <a href="https://web.facebook.com/profile.php?id=61587310866451" target="_blank">
+              <i class="bi-facebook"></i>
+            </a>
             <a href="https://www.instagram.com/pvyfoundation/" target="_blank">
               <i class="bi-instagram"></i>
             </a>
             <a href="https://x.com/pvyfoundation?s=11" target="_blank">
               <i class="bi-twitter-x"></i>
             </a>
+            <a href="" target="_blank">
+              <i class="bi-tiktok"></i>
+            </a>
             <a href="https://www.linkedin.com/m/company/pvyfoundation" target="_blank">
               <i class="bi-linkedin"></i>
-            </a>
-            <a href="https://web.facebook.com/profile.php?id=61587310866451" target="_blank">
-              <i class="bi-facebook"></i>
             </a>
           </div>
         </div>

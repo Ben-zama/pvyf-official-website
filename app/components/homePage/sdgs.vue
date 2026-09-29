@@ -97,6 +97,14 @@ const sdgs = [
     image: "/images/sdgs/goal16.jpg",
     bgColor: "#00689D",
   },
+  {
+    no: "17",
+    name: "Partnerships",
+    name2: "For The Goals",
+    info: "Building strategic partnerships with government institutions, development partners, private sector organisations, and civil society actors to scale impact and create sustainable opportunities for young people.",
+    image: "/images/sdgs/goal17.png",
+    bgColor: "#193667",
+  },
 ];
 </script>
 
@@ -156,9 +164,6 @@ const sdgs = [
 
       @include respond-to("xl") {
         grid-template-columns: repeat(4, 1fr);
-        > :last-child {
-          grid-column: span 2;
-        }
       }
 
       .sdg-card {

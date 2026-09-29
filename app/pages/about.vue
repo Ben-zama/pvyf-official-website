@@ -7,6 +7,8 @@
 
       <AboutPageApproach />
 
+      <AboutPageTeam />
+
       <HomePageProjects />
 
       <DonationCta />

@@ -52,9 +52,9 @@ const impact = [
   },
   {
     icon: "bi-person-vcard-fill",
-    stat: "60",
-    title: "Reached",
-    info: "Mobilized for hands-on climate action during the Mahuta Community Cleanup.",
+    stat: "120",
+    title: "Reached through our pilot initiatives",
+    info: "Successfully reached through early initiatives including the mahuta cleanup and sensitization program, girl child day program and webinars on self discovery.",
   },
 ];
 </script>

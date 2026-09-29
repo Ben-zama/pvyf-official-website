@@ -178,13 +178,12 @@ const testimonials = [
 
       h2 {
         margin: 10px 0;
-        font-size: 26px;
       }
 
       @include respond-to("md") {
         max-width: 600px;
         h2 {
-          font-size: 34px;
+          font-size: 32px;
         }
       }
 
