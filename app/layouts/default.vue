@@ -418,7 +418,9 @@ const closeMenu = () => {
         }
         .socials {
           display: flex;
+          flex-wrap: wrap;
           gap: 15px;
+          justify-content: center;
           a {
             display: flex;
             align-items: center;

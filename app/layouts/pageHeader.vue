@@ -504,6 +504,7 @@ const closeMenu = () => {
         }
         .socials {
           display: flex;
+          flex-wrap: wrap;
           gap: 15px;
           a {
             display: flex;

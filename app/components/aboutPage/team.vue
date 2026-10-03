@@ -31,56 +31,52 @@
 const team = [
   {
     name: "Princess Vanessa Emmanuel",
-    img: "/images/team/princess.png",
+    img: "/images/team/vanessa.jpg",
     role: "Founder / Executive Director",
     links: [
-      { icon: "bi-facebook", url: "" },
-      { icon: "bi-linkedin", url: "" }
+      { icon: "bi-instagram", url: "https://www.instagram.com/princess__the_trailblazer/" },
+      { icon: "bi-linkedin", url: "https://www.linkedin.com/in/princess-vanessa-emmanuel-92386a308?utm_source=share_via&utm_content=profile&utm_medium=member_ios" }
     ]
   },
   {
     name: "Ahmed Abraham Armani",
-    img: "/images/team/ahmed.png",
+    img: "/images/team/ahmed.jpg",
     role: "Head of Operations & Administrations",
     links: [
-      { icon: "bi-facebook", url: "" },
-      { icon: "bi-linkedin", url: "" }
+      { icon: "bi-facebook", url: "https://www.facebook.com/share/1H9pNE3rMf/?mibextid=wwXIfr" },
     ]
   },
   {
     name: "Ojo Moses Ojonugwa",
-    img: "/images/team/ojo.png",
+    img: "/images/team/ojo.jpg",
     role: "Head of Media & Communications",
     links: [
-      { icon: "bi-facebook", url: "" },
-      { icon: "bi-linkedin", url: "" }
+      { icon: "bi-facebook", url: "https://www.facebook.com/profile.php?id=100010982868816" },
+      { icon: "bi-youtube", url: "https://www.youtube.com/@EndowedCircle/featured" }
     ]
   },
   {
     name: "Dorathy Gimbiya Bodam",
-    img: "/images/team/dorathy.png",
+    img: "/images/team/dorathy.jpg",
     role: "Head of Monitoring, Evaluation & Reporting Department",
     links: [
-      { icon: "bi-facebook", url: "" },
-      { icon: "bi-linkedin", url: "" }
+      { icon: "bi-facebook", url: "https://www.facebook.com/share/1RKGEjxvkL/?mibextid=wwXIfr" },
     ]
   },
   {
     name: "Bishop Friday",
-    img: "/images/team/bishop.png",
+    img: "/images/team/bishop.jpg",
     role: "Head of Community Engagement & Partnerships Department",
     links: [
-      { icon: "bi-facebook", url: "" },
-      { icon: "bi-linkedin", url: "" }
+      { icon: "bi-instagram", url: "https://www.instagram.com/friday.bishop?stkn=Mnh5MjE1djVpMjJ5" },
     ]
   },
   {
-    name: "Anita Zugwai Daniel",
-    img: "/images/team/anita.png",
+    name: "Nita Zugwai Daniel",
+    img: "/images/team/anita.jpg",
     role: "Head of Training & Facilitation Department",
     links: [
-      { icon: "bi-facebook", url: "" },
-      { icon: "bi-linkedin", url: "" }
+      { icon: "bi-facebook", url: "https://www.facebook.com/profile.php?id=100075776135822&mibextid=wwXIfr" },
     ]
   },
 ];
@@ -158,7 +154,7 @@ const team = [
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 20%;
+        height: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -172,12 +168,14 @@ const team = [
           transition: opacity 0.3s ease, transform 0.3s ease;
           opacity: 1;
           transform: translateY(0);
+          max-width: 80%;
           h3 {
             font-family: $alternate-font;
             font-weight: 900;
             font-size: 20px;
           }
           p {
+            margin-top: 8px;
             font-family: $alternate-font;
             font-size: 12px;
           }
